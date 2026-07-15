@@ -1,6 +1,8 @@
 #ifndef FUNCIONES_H
 #define FUNCIONES_H
 
+#include<string>
+
 struct persona{
 	std::string nombre;
 	std::string email;
@@ -26,4 +28,6 @@ bool registrarpersona(int);
 void listapersonas(int);
 void buscarpersona(int);
 
+void prestarlibro(int a, int b);
+void devolverlibro(int a, int b);
 #endif

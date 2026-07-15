@@ -1,4 +1,4 @@
-#include<iostream>;
+#include<iostream>
 #include<cstdlib>
 #include<string>
 #include"funciones.h"
@@ -17,6 +17,9 @@ void menu(){
 	std::cout<<" 4 - Registrar usuario\n";
 	std::cout<<" 5 - Mostrar usuarios registrados\n";
 	std::cout<<" 6 - Buscar usuarios por codigo de estudiante\n\n";
+	
+	std::cout<<" 7 - Prestar libro\n";
+	std::cout<<" 8 - Devolucion de libro\n\n";
 	
 	std::cout<<" 0 - Salir\n";
 	std::cout<<"================================================\n";
@@ -315,8 +318,8 @@ bool registrarpersona(int a){
 
 	std::string tempnombre; /*Aqui guardare temporalmente el nombre de la persona*/
 	std::string tempemail; /*Aqui guardare temporalmente el email de la persona*/
-	int tempdni; /*Aqui guardare temporalmente el dani*/
-	int tempcodigo; /*Aqui guardare temporalmente le codigo de la persona*/
+	std::string tempdni; /*Aqui guardare temporalmente el dani*/
+	std::string tempcodigo; /*Aqui guardare temporalmente le codigo de la persona*/
 	int temptelefono; /*Aqui guardare temporalmente le numeor de telefono de la poersona*/
 	
 	std::cin.ignore();
@@ -593,4 +596,68 @@ void buscarpersona(int a){
 			}
 		}
 	}while(operacion!=0);
+}
+
+
+void prestarlibro(int a, int b){
+	
+	int tempid; /*Aqui guardare la ID del libro a prestar, temporalmente*/
+	int existencia=0; /*Aqui verificare la existencia*/
+	int indicelibro; /*Aqui guardare le indice de la persona*/
+	int indicepersona; /*Aqui guardare el indice de la persona*/
+	int operacion;
+	
+	std::cout<<"================================================\n";
+	std::cout<<" Prestamo de libros!\n";
+	std::cout<<"================================================\n";
+	std::cout<<" Por favor ingrese el ID del libro a prestar:"; std::cin>>tempid;
+	std::cout<<"================================================\n";
+	
+	for(int i=0; i<a; i++){
+		if(l[i].id==tempid){
+			existencia=1;
+			indicelibro=i;
+			break;
+		}
+	}
+	if(existencia==1){
+		
+		std::string tempcodigo;
+		int existencia=0;
+		
+		std::cout<<" Ingrese le codigo universitario del prestamista: "; std::cin>>tempcodigo;
+		std::cout<<"================================================\n";
+		
+		for(int j=0; j<b; j++){
+			if(p[j].codigo==tempcodigo){
+				
+			indicepersona=j;
+			existencia=1;
+			
+			break;
+		}
+		if(existencia==1){
+			
+			std::cout<<"Confirmar operacion [S/N]: "; std::cin>>operacion;	
+			
+			if(operacion=='s' || operacion=='S'){
+				
+				l[indicelibro].prestado='S';
+				
+				std::cout<<" Accion realizada!";
+				
+			}else{
+				
+				std::cout<<"Operacion cancelada...";
+				system("pause");
+				
+			}
+		}else{
+			std::cout<<"Ingrese un codigo existente...";
+		}
+	}
+	}else{
+		std::cout<<"Por favor ingrese una ID valida...\n\n";
+		system("pause");
+	}
 }

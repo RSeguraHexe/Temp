@@ -9,6 +9,8 @@ int main(){
 	int x=0; /*Aqui guardare el numero de operacion para las personas*/
 	int op=67; /*Aqui guardare la operacion elegida por el usuario*/
 	
+	
+	
 	while(op!=0){
 		
 		system("cls");
@@ -50,7 +52,8 @@ int main(){
 				
 			}
 			
-			case 4:
+			case 4:{
+				
 				
 				system("cls");
 				
@@ -59,6 +62,7 @@ int main(){
 				}
 				
 				break;
+			}
 				
 			case 5:{
 				
@@ -78,6 +82,23 @@ int main(){
 				break;
 			}
 				
+			case 7:{
+				
+				system("cls");
+				
+				prestarlibro(z , x);
+				
+				break;
+			}
+			
+			case 8:{
+				
+				system("cls");
+				
+				devolverlibro(z , x);
+				
+				break;
+			}
 			case 0:{
 				
 				break;
