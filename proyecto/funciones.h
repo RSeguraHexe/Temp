@@ -6,7 +6,6 @@ struct persona{
 	std::string email;
 	std::string dni;
 	std::string codigo;
-	char sexo;
 	int telefono;
 };
 
@@ -22,5 +21,9 @@ void menu();
 bool registrarlibro(int);
 void listalibros(int);
 void buscarlibro(int);
+
+bool registrarpersona(int);
+void listapersonas(int);
+void buscarpersona(int);
 
 #endif

@@ -50,6 +50,34 @@ int main(){
 				
 			}
 			
+			case 4:
+				
+				system("cls");
+				
+				if(registrarpersona(x)){
+					x=x+1;
+				}
+				
+				break;
+				
+			case 5:{
+				
+				system("cls");
+				
+				listapersonas(x);
+				
+				break;
+			}
+				
+			case 6:{
+			
+				system("cls");
+				
+				buscarpersona(x);
+				
+				break;
+			}
+				
 			case 0:{
 				
 				break;

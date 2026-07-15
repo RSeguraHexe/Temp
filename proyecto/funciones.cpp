@@ -65,7 +65,7 @@ void listalibros(int a){
 		std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
 		std::cout<<" ID: "<<l[i].id<<std::endl;
 		std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-		std::cout<<" Prestado?: "<<l[i].prestado;
+		std::cout<<" Prestado?: "<<l[i].prestado<<std::endl;
 		std::cout<<"================================================\n";
 	}
 	system("pause");
@@ -286,6 +286,301 @@ void buscarlibro(int a){
 				}else if(confirmacion==0){
 					
 					std::cout<<"Todos los libros estan disponibles\n\n";
+					
+					system("pause");
+				}
+				
+				break;
+			}
+			
+			case 0:{
+				break;
+			}
+		}
+	}while(operacion!=0);
+}
+
+
+
+
+
+
+
+
+
+
+bool registrarpersona(int a){
+	
+	char confirmacion; /*Aqui guardare la confirmacion de la accion de registrar el libro*/
+
+	std::string tempnombre; /*Aqui guardare temporalmente el nombre de la persona*/
+	std::string tempemail; /*Aqui guardare temporalmente el email de la persona*/
+	int tempdni; /*Aqui guardare temporalmente el dani*/
+	int tempcodigo; /*Aqui guardare temporalmente le codigo de la persona*/
+	int temptelefono; /*Aqui guardare temporalmente le numeor de telefono de la poersona*/
+	
+	std::cin.ignore();
+	
+	std::cout<<"================================================\n";
+	std::cout<<" Registrando...\n";
+	std::cout<<"================================================\n";
+	std::cout<<" Nombre del usuario: "; std::getline(std::cin, tempnombre);
+	std::cout<<" Correo institucional: "; std::cin>>tempemail;
+	std::cout<<" DNI del usuario: "; std::cin>>tempdni;
+	std::cout<<" Codigo del usuario: "; std::cin>>tempcodigo;
+	std::cout<<" Telefono del usuario: "; std::cin>>temptelefono;
+	std::cout<<"================================================\n";
+	std::cout<<" Confirmar accion [S/N]: "; std::cin>>confirmacion;
+	
+	if(confirmacion=='S' || confirmacion=='s'){
+		p[a].nombre = tempnombre;
+		p[a].email = tempemail;
+		p[a].dni = tempdni;
+		p[a].codigo = tempcodigo;
+		p[a].telefono = temptelefono;
+		return true;
+	}
+	return false;
+}
+
+
+
+void listapersonas(int a){
+	std::cout<<"================================================\n";
+	for (int i=0;i<a;i++){
+		std::cout<<" Usuario ["<<i+1<<"]\n\n";
+			
+		std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
+		std::cout<<" Email institucional: "<<p[i].email<<std::endl;
+		std::cout<<" DNI: "<<p[i].dni<<std::endl;
+		std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
+		std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
+		std::cout<<"================================================\n";
+	}
+	system("pause");
+}
+
+
+
+void buscarpersona(int a){
+	
+	int operacion=67;
+	do{
+		system("cls");
+		
+		std::cout<<"================================================\n";
+		std::cout<<" Buscar usario por...\n";
+		std::cout<<"================================================\n";
+		std::cout<<" 1 - Nombre del usuario\n";
+		std::cout<<" 2 - Email institucional\n";
+		std::cout<<" 3 - DNI\n";
+		std::cout<<" 4 - Codigo universitario\n";
+		std::cout<<" 5 - Telefono\n\n";
+		
+		std::cout<<" 0 - Volver al Menu Principal\n";
+		std::cout<<"================================================\n";
+		std::cout<<" Operacion: "; std::cin>>operacion;
+		
+		switch(operacion){
+			
+			case 1:{
+				system("cls");
+				
+				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el usuario*/
+				std::string tempnombre; /*Aqui guardare temporalmente le nombre del usuario*/
+				
+				std::cout<<"================================================\n";
+				std::cout<<" Buscar Libro por Nombre del Usuario\n";
+				std::cout<<"================================================\n";
+				std::cout<<" Por favor ingrese el nombre del Usuario:\n"; std::getline(std::cin, tempnombre);
+				std::cout<<"================================================\n";
+				
+				for (int i=0;i<a;i++){	
+					if(p[i].nombre==tempnombre){
+						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+						
+						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
+						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
+						std::cout<<" DNI: "<<p[i].dni<<std::endl;
+						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
+						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
+						std::cout<<"================================================\n";
+						
+						confirmacion=confirmacion+1;
+					}
+				}
+			
+				if(confirmacion!=0){
+					
+					system("pause");
+					
+				}else if(confirmacion==0){
+					
+					std::cout<<"No se a encontrado el usuario\n\n";
+					
+					system("pause");
+				}
+				
+				break;
+			}
+			
+			case 2:{
+				system("cls");
+				
+				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
+				std::string tempemail; /*Aqui guardare temporalmente el email*/
+				
+				std::cout<<"================================================\n";
+				std::cout<<" Buscar Usuario por su Email Institucional...\n";
+				std::cout<<"================================================\n";
+				std::cout<<" Por favor ingrese el Email:\n"; std::cin>>tempemail;
+				std::cout<<"================================================\n";
+				
+				for(int i=0; i<a; i++){
+					if(p[i].email==tempemail){
+						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+			
+						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
+						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
+						std::cout<<" DNI: "<<p[i].dni<<std::endl;
+						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
+						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
+						std::cout<<"================================================\n";
+						
+						confirmacion=confirmacion+1;
+					}
+				}
+				
+				if(confirmacion!=0){
+					
+					system("pause");
+					
+				}else if(confirmacion==0){
+					
+					std::cout<<"No se a encontrado el usuarioi\n\n";
+					
+					system("pause");
+				}
+				
+				break;
+			}
+			
+			case 3:{
+				system("cls");
+				
+				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
+				std::string tempdni; /*Aqui guardare temporalmente el dni del usuario*/
+				
+				std::cout<<"================================================\n";
+				std::cout<<" Buscar Libro por DNI...\n";
+				std::cout<<"================================================\n";
+				std::cout<<" Por favor ingrese el DNI del Usuario:"; std::cin>>tempdni;
+				std::cout<<"================================================\n";
+				
+				for(int i=0; i<a; i++){
+					if(p[i].dni==tempdni){
+						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+			
+						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
+						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
+						std::cout<<" DNI: "<<p[i].dni<<std::endl;
+						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
+						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
+						std::cout<<"================================================\n";
+						
+						confirmacion=confirmacion+1;
+					}
+				}
+				
+				if(confirmacion!=0){
+					
+					system("pause");
+					
+				}else if(confirmacion==0){
+					
+					std::cout<<"No se a encontrado al Usuario\n\n";
+					
+					system("pause");
+				}
+				
+				break;
+			}
+			
+			case 4:{
+				system("cls");
+				
+				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
+				std::string tempcodigo; /*Aqui guardare temporalmente el codigo del usuario*/
+				
+				std::cout<<"================================================\n";
+				std::cout<<" Buscar Libro por Codigo...\n";
+				std::cout<<"================================================\n";
+				std::cout<<" Por favor ingrese el Codigo del Usuario:"; std::cin>>tempcodigo;
+				std::cout<<"================================================\n";
+				
+				for(int i=0; i<a; i++){
+					if(p[i].codigo==tempcodigo){
+						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+			
+						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
+						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
+						std::cout<<" DNI: "<<p[i].dni<<std::endl;
+						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
+						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
+						std::cout<<"================================================\n";
+						
+						confirmacion=confirmacion+1;
+					}
+				}
+				
+				if(confirmacion!=0){
+					
+					system("pause");
+					
+				}else if(confirmacion==0){
+					
+					std::cout<<"No se a encontrado al usuario\n\n";
+					
+					system("pause");
+				}
+				
+				break;
+			}
+			
+			case 5:{
+				system("cls");
+				
+				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
+				int temptelefono; /*Aqui guardare temporalmente el telefono del usuario*/
+				
+				std::cout<<"================================================\n";
+				std::cout<<" Buscar Libro por Telefono...\n";
+				std::cout<<"================================================\n";
+				std::cout<<" Por favor ingrese el Telefono del Usuario:"; std::cin>>temptelefono;
+				std::cout<<"================================================\n";
+				
+				for(int i=0; i<a; i++){
+					if(p[i].telefono==temptelefono){
+						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+			
+						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
+						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
+						std::cout<<" DNI: "<<p[i].dni<<std::endl;
+						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
+						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
+						std::cout<<"================================================\n";
+						
+						confirmacion=confirmacion+1;
+					}
+				}
+				
+				if(confirmacion!=0){
+					
+					system("pause");
+					
+				}else if(confirmacion==0){
+					
+					std::cout<<"No se a encontrado al usuario\n\n";
 					
 					system("pause");
 				}
