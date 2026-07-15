@@ -20,11 +20,43 @@ int main(){
 		switch(op){
 			
 			case 1:{
-				registrarlibro(z);
+				
+				system("cls");
+				
+				if(registrarlibro(z)){
+					z=z+1;
+				};
+				
 				break;
+				
+			}
+			
+			case 2:{
+				
+				system("cls");
+				
+				listalibros(z);
+				
+				break;
+			}
+			
+			case 3:{
+				
+				system("cls");
+				
+				buscarlibro(z);
+				
+				break;
+				
+			}
+			
+			case 0:{
+				
+				break;
+				
 			}
 		}
 	}
-	
 	return 0; 
 }
+

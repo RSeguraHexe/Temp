@@ -19,6 +19,8 @@ struct libro{
 };
 
 void menu();
-void registrarlibro(int);
+bool registrarlibro(int);
+void listalibros(int);
+void buscarlibro(int);
 
 #endif
