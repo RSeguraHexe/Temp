@@ -94,9 +94,7 @@ int main(){
 			case 8:{
 				
 				system("cls");
-				
-				devolverlibro(z , x);
-				
+			
 				break;
 			}
 			case 0:{

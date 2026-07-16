@@ -29,5 +29,4 @@ void listapersonas(int);
 void buscarpersona(int);
 
 void prestarlibro(int a, int b);
-void devolverlibro(int a, int b);
 #endif

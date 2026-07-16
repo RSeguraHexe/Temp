@@ -19,7 +19,6 @@ void menu(){
 	std::cout<<" 6 - Buscar usuarios por codigo de estudiante\n\n";
 	
 	std::cout<<" 7 - Prestar libro\n";
-	std::cout<<" 8 - Devolucion de libro\n\n";
 	
 	std::cout<<" 0 - Salir\n";
 	std::cout<<"================================================\n";
