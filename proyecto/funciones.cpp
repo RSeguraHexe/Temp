@@ -16,7 +16,7 @@ void menu(){
 	
 	std::cout<<" 4 - Registrar usuario\n";
 	std::cout<<" 5 - Mostrar usuarios registrados\n";
-	std::cout<<" 6 - Buscar usuarios por codigo de estudiante\n\n";
+	std::cout<<" 6 - Buscar usuarios\n\n";
 	
 	std::cout<<" 7 - Prestar libro\n";
 	
@@ -101,7 +101,7 @@ void buscarlibro(int a){
 				
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				std::string tempnombrelibro; /*Aqui guardare temporalmente le nombre de mi libro*/
-				
+				std::cin.ignore();
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Libro por Nombre del Libro\n";
 				std::cout<<"================================================\n";
@@ -142,7 +142,7 @@ void buscarlibro(int a){
 				
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				std::string tempautor; /*Aqui guardare temporalmente le nombre de mi autor*/
-				
+				std::cin.ignore();
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Libro por Autor del Libro\n";
 				std::cout<<"================================================\n";
@@ -187,7 +187,7 @@ void buscarlibro(int a){
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Libro por ID\n";
 				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el ID del libro:"; std::cin>>tempid;
+				std::cout<<" Por favor ingrese el ID del libro: "; std::cin>>tempid;
 				std::cout<<"================================================\n";
 				
 				for(int i=0; i<a; i++){
@@ -198,7 +198,7 @@ void buscarlibro(int a){
 						std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
 						std::cout<<" ID: "<<l[i].id<<std::endl;
 						std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-						std::cout<<" Prestado?: "<<l[i].prestado;
+						std::cout<<" Prestado?: "<<l[i].prestado<<std::endl;
 						std::cout<<"================================================\n";
 						
 						confirmacion=confirmacion+1;
@@ -211,7 +211,7 @@ void buscarlibro(int a){
 					
 				}else if(confirmacion==0){
 					
-					std::cout<<"No se a encontrado el libro\n\n";
+					std::cout<<" No se a encontrado el libro\n\n";
 					
 					system("pause");
 				}
@@ -249,7 +249,7 @@ void buscarlibro(int a){
 					
 				}else if(confirmacion==0){
 					
-					std::cout<<"Todos los libros estan prestados\n\n";
+					std::cout<<" Todos los libros estan prestados\n\n";
 					
 					system("pause");
 				}
@@ -390,7 +390,7 @@ void buscarpersona(int a){
 				
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el usuario*/
 				std::string tempnombre; /*Aqui guardare temporalmente le nombre del usuario*/
-				
+				std::cin.ignore();
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Libro por Nombre del Usuario\n";
 				std::cout<<"================================================\n";
@@ -431,7 +431,7 @@ void buscarpersona(int a){
 				
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				std::string tempemail; /*Aqui guardare temporalmente el email*/
-				
+				std::cin.ignore();
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Usuario por su Email Institucional...\n";
 				std::cout<<"================================================\n";
@@ -472,7 +472,7 @@ void buscarpersona(int a){
 				
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				std::string tempdni; /*Aqui guardare temporalmente el dni del usuario*/
-				
+				std::cin.ignore();
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Libro por DNI...\n";
 				std::cout<<"================================================\n";
@@ -513,7 +513,7 @@ void buscarpersona(int a){
 				
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				std::string tempcodigo; /*Aqui guardare temporalmente el codigo del usuario*/
-				
+				std::cin.ignore();
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Libro por Codigo...\n";
 				std::cout<<"================================================\n";
@@ -554,7 +554,6 @@ void buscarpersona(int a){
 				
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				int temptelefono; /*Aqui guardare temporalmente el telefono del usuario*/
-				
 				std::cout<<"================================================\n";
 				std::cout<<" Buscar Libro por Telefono...\n";
 				std::cout<<"================================================\n";
