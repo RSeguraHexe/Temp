@@ -8,7 +8,7 @@ libro l[670];
 
 void menu(){
 	std::cout<<"================================================\n";
-	std::cout<<" Eliga una opcion!\n";
+	std::cout<<"     Biblioteca!\n";
 	std::cout<<"================================================\n";
 	std::cout<<" 1 - Registrar ingreso de un nuevo libro\n";
 	std::cout<<" 2 - Mostrar libros registrados\n";
@@ -604,7 +604,7 @@ void prestarlibro(int a, int b){
 	int existencia=0; /*Aqui verificare la existencia*/
 	int indicelibro; /*Aqui guardare le indice de la persona*/
 	int indicepersona; /*Aqui guardare el indice de la persona*/
-	int operacion;
+	char operacion;
 	
 	std::cout<<"================================================\n";
 	std::cout<<" Prestamo de libros!\n";
@@ -634,6 +634,7 @@ void prestarlibro(int a, int b){
 			existencia=1;
 			
 			break;
+			}
 		}
 		if(existencia==1){
 			
@@ -643,7 +644,9 @@ void prestarlibro(int a, int b){
 				
 				l[indicelibro].prestado='S';
 				
-				std::cout<<" Accion realizada!";
+				std::cout<<" Accion realizada!\n\n";
+				
+				system("pause");
 				
 			}else{
 				
@@ -652,9 +655,10 @@ void prestarlibro(int a, int b){
 				
 			}
 		}else{
-			std::cout<<"Ingrese un codigo existente...";
+			std::cout<<"Ingrese un codigo existente...\n\n";
+			
+			system("pause");
 		}
-	}
 	}else{
 		std::cout<<"Por favor ingrese una ID valida...\n\n";
 		system("pause");
