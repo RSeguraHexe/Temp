@@ -2,18 +2,19 @@
 #define FUNCIONES_H
 
 #include<string>
+using namespace std;
 
 struct persona{
-	std::string nombre;
-	std::string email;
-	std::string dni;
-	std::string codigo;
+	string nombre;
+	string email;
+	string dni;
+	string codigo;
 	int telefono;
 };
 
 struct libro{
-	std::string autor;
-	std::string nombrelibro;
+	string autor;
+	string nombrelibro;
 	int id;
 	int anio;
 	char prestado;

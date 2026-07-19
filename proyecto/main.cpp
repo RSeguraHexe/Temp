@@ -2,6 +2,7 @@
 #include<string>
 #include<cstdlib>
 #include"funciones.h"
+using namespace std;
 
 int main(){
 	
@@ -17,7 +18,7 @@ int main(){
 		
 		menu();
 		
-		std::cout<<" Opcion: "; std::cin>>op;
+		std::cout<<" Opcion: ";cin>>op;
 		
 		switch(op){
 			

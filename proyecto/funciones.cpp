@@ -2,51 +2,52 @@
 #include<cstdlib>
 #include<string>
 #include"funciones.h"
+using namespace std;
 
 persona p[670];
 libro l[670];
 
 void menu() {
-	std::cout<<"================================================\n";
-	std::cout<<"     Biblioteca!\n";
-	std::cout<<"================================================\n";
-	std::cout<<" 1 - Registrar ingreso de un nuevo libro\n";
-	std::cout<<" 2 - Mostrar libros registrados\n";
-	std::cout<<" 3 - Buscar libro\n\n";
+	cout<<"================================================\n";
+	cout<<"     Biblioteca!\n";
+	cout<<"================================================\n";
+	cout<<" 1 - Registrar ingreso de un nuevo libro\n";
+	cout<<" 2 - Mostrar libros registrados\n";
+	cout<<" 3 - Buscar libro\n\n";
 
-	std::cout<<" 4 - Registrar usuario\n";
-	std::cout<<" 5 - Mostrar usuarios registrados\n";
-	std::cout<<" 6 - Buscar usuarios\n\n";
+	cout<<" 4 - Registrar usuario\n";
+	cout<<" 5 - Mostrar usuarios registrados\n";
+	cout<<" 6 - Buscar usuarios\n\n";
 
-	std::cout<<" 7 - Prestar libro\n";
+	cout<<" 7 - Prestar libro\n";
 
-	std::cout<<" 0 - Salir\n";
-	std::cout<<"================================================\n";
+	cout<<" 0 - Salir\n";
+	cout<<"================================================\n";
 };
 
 
 
 bool registrarlibro(int a) {
 
-	std::string tempautor; /*Aqui guardare temporalmente le nombre del libro hasta la confirmacion*/
-	std::string tempnombrelibro; /*Aqui guardare temporalmente le nombre del autor hasta la confirmacion*/
+	string tempautor; /*Aqui guardare temporalmente le nombre del libro hasta la confirmacion*/
+	string tempnombrelibro; /*Aqui guardare temporalmente le nombre del autor hasta la confirmacion*/
 	int aniotemp; /*Aqui guardare temporalmente el anio*/
 	char confirmacion; /*Aqui guardare la confirmacion de la accion de registrar el libro*/
 
-	std::cin.ignore();
+	cin.ignore();
 
-	std::cout<<"================================================\n";
-	std::cout<<" Registrando...\n";
-	std::cout<<"================================================\n";
-	std::cout<<" Nombre del libro: ";
-	std::getline(std::cin, tempnombrelibro);
-	std::cout<<" Nombre del autor: ";
-	std::getline(std::cin, tempautor);
-	std::cout<<" Año de publicacion: ";
-	std::cin>>aniotemp;
-	std::cout<<"================================================\n";
-	std::cout<<" Confirmar accion [S/N]: ";
-	std::cin>>confirmacion;
+	cout<<"================================================\n";
+	cout<<" Registrando...\n";
+	cout<<"================================================\n";
+	cout<<" Nombre del libro: ";
+	getline(cin, tempnombrelibro);
+	cout<<" Nombre del autor: ";
+	getline(cin, tempautor);
+	cout<<" Año de publicacion: ";
+	cin>>aniotemp;
+	cout<<"================================================\n";
+	cout<<" Confirmar accion [S/N]: ";
+	cin>>confirmacion;
 
 	if(confirmacion=='S' || confirmacion=='s') {
 		l[a].autor = tempautor;
@@ -63,16 +64,16 @@ bool registrarlibro(int a) {
 
 
 void listalibros(int a) {
-	std::cout<<"================================================\n";
+	cout<<"================================================\n";
 	for (int i=0; i<a; i++) {
-		std::cout<<"Libro ["<<i+1<<"]\n\n";
+		cout<<"Libro ["<<i+1<<"]\n\n";
 
-		std::cout<<" Nombre del Libro:"<<l[i].nombrelibro<<std::endl;
-		std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
-		std::cout<<" ID: "<<l[i].id<<std::endl;
-		std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-		std::cout<<" Prestado?: "<<l[i].prestado<<std::endl;
-		std::cout<<"================================================\n";
+		cout<<" Nombre del Libro:"<<l[i].nombrelibro<<endl;
+		cout<<" Nombre del Autor:"<<l[i].autor<<endl;
+		cout<<" ID: "<<l[i].id<<endl;
+		cout<<" Año de publicacion: "<<l[i].anio<<endl;
+		cout<<" Prestado?: "<<l[i].prestado<<endl;
+		cout<<"================================================\n";
 	}
 	system("pause");
 }
@@ -85,19 +86,19 @@ void buscarlibro(int a) {
 	do {
 		system("cls");
 
-		std::cout<<"================================================\n";
-		std::cout<<" Buscar Libro por...\n";
-		std::cout<<"================================================\n";
-		std::cout<<" 1 - Nombre del Libro\n";
-		std::cout<<" 2 - Autor del Libro\n";
-		std::cout<<" 3 - ID del Libro\n";
-		std::cout<<" 4 - Libros Disponibles\n";
-		std::cout<<" 5 - Libros Prestados\n\n";
+		cout<<"================================================\n";
+		cout<<" Buscar Libro por...\n";
+		cout<<"================================================\n";
+		cout<<" 1 - Nombre del Libro\n";
+		cout<<" 2 - Autor del Libro\n";
+		cout<<" 3 - ID del Libro\n";
+		cout<<" 4 - Libros Disponibles\n";
+		cout<<" 5 - Libros Prestados\n\n";
 
-		std::cout<<" 0 - Volver al Menu Principal\n";
-		std::cout<<"================================================\n";
-		std::cout<<" Operacion: ";
-		std::cin>>operacion;
+		cout<<" 0 - Volver al Menu Principal\n";
+		cout<<"================================================\n";
+		cout<<" Operacion: ";
+		cin>>operacion;
 
 		switch(operacion) {
 
@@ -105,25 +106,25 @@ void buscarlibro(int a) {
 				system("cls");
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
-				std::string tempnombrelibro; /*Aqui guardare temporalmente le nombre de mi libro*/
-				std::cin.ignore();
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Libro por Nombre del Libro\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el nombre del libro:\n";
-				std::getline(std::cin, tempnombrelibro);
-				std::cout<<"================================================\n";
+				string tempnombrelibro; /*Aqui guardare temporalmente le nombre de mi libro*/
+				cin.ignore();
+				cout<<"================================================\n";
+				cout<<" Buscar Libro por Nombre del Libro\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el nombre del libro:\n";
+				getline(cin, tempnombrelibro);
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(l[i].nombrelibro==tempnombrelibro) {
-						std::cout<<"Libro ["<<i+1<<"]\n\n";
+						cout<<"Libro ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del Libro:"<<l[i].nombrelibro<<std::endl;
-						std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
-						std::cout<<" ID: "<<l[i].id<<std::endl;
-						std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-						std::cout<<" Prestado?: "<<l[i].prestado;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del Libro:"<<l[i].nombrelibro<<endl;
+						cout<<" Nombre del Autor:"<<l[i].autor<<endl;
+						cout<<" ID: "<<l[i].id<<endl;
+						cout<<" Año de publicacion: "<<l[i].anio<<endl;
+						cout<<" Prestado?: "<<l[i].prestado;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -135,7 +136,7 @@ void buscarlibro(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"No se a encontrado el libro\n\n";
+					cout<<"No se a encontrado el libro\n\n";
 
 					system("pause");
 				}
@@ -147,25 +148,25 @@ void buscarlibro(int a) {
 				system("cls");
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
-				std::string tempautor; /*Aqui guardare temporalmente le nombre de mi autor*/
-				std::cin.ignore();
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Libro por Autor del Libro\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el Autor:\n";
-				std::getline(std::cin, tempautor);
-				std::cout<<"================================================\n";
+				string tempautor; /*Aqui guardare temporalmente le nombre de mi autor*/
+				cin.ignore();
+				cout<<"================================================\n";
+				cout<<" Buscar Libro por Autor del Libro\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el Autor:\n";
+				getline(cin, tempautor);
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(l[i].autor==tempautor) {
-						std::cout<<"Libro ["<<i+1<<"]\n\n";
+						cout<<"Libro ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del Libro:"<<l[i].nombrelibro<<std::endl;
-						std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
-						std::cout<<" ID: "<<l[i].id<<std::endl;
-						std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-						std::cout<<" Prestado?: "<<l[i].prestado;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del Libro:"<<l[i].nombrelibro<<endl;
+						cout<<" Nombre del Autor:"<<l[i].autor<<endl;
+						cout<<" ID: "<<l[i].id<<endl;
+						cout<<" Año de publicacion: "<<l[i].anio<<endl;
+						cout<<" Prestado?: "<<l[i].prestado;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -177,7 +178,7 @@ void buscarlibro(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"No se a encontrado el libro\n\n";
+					cout<<"No se a encontrado el libro\n\n";
 
 					system("pause");
 				}
@@ -191,23 +192,23 @@ void buscarlibro(int a) {
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				int tempid; /*Aqui guardare temporalmente la id del libro*/
 
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Libro por ID\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el ID del libro: ";
-				std::cin>>tempid;
-				std::cout<<"================================================\n";
+				cout<<"================================================\n";
+				cout<<" Buscar Libro por ID\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el ID del libro: ";
+				cin>>tempid;
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(l[i].id==tempid) {
-						std::cout<<"Libro ["<<i+1<<"]\n\n";
+						cout<<"Libro ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del Libro:"<<l[i].nombrelibro<<std::endl;
-						std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
-						std::cout<<" ID: "<<l[i].id<<std::endl;
-						std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-						std::cout<<" Prestado?: "<<l[i].prestado<<std::endl;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del Libro:"<<l[i].nombrelibro<<endl;
+						cout<<" Nombre del Autor:"<<l[i].autor<<endl;
+						cout<<" ID: "<<l[i].id<<endl;
+						cout<<" Año de publicacion: "<<l[i].anio<<endl;
+						cout<<" Prestado?: "<<l[i].prestado<<endl;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -219,7 +220,7 @@ void buscarlibro(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<" No se a encontrado el libro\n\n";
+					cout<<" No se a encontrado el libro\n\n";
 
 					system("pause");
 				}
@@ -232,20 +233,20 @@ void buscarlibro(int a) {
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 
-				std::cout<<"================================================\n";
-				std::cout<<" Mostrando Libros Disponibles\n";
-				std::cout<<"================================================\n";
+				cout<<"================================================\n";
+				cout<<" Mostrando Libros Disponibles\n";
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(l[i].prestado=='N') {
-						std::cout<<"Libro ["<<i+1<<"]\n\n";
+						cout<<"Libro ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del Libro:"<<l[i].nombrelibro<<std::endl;
-						std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
-						std::cout<<" ID: "<<l[i].id<<std::endl;
-						std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-						std::cout<<" Prestado?: "<<l[i].prestado<<std::endl;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del Libro:"<<l[i].nombrelibro<<endl;
+						cout<<" Nombre del Autor:"<<l[i].autor<<endl;
+						cout<<" ID: "<<l[i].id<<endl;
+						cout<<" Año de publicacion: "<<l[i].anio<<endl;
+						cout<<" Prestado?: "<<l[i].prestado<<endl;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -257,7 +258,7 @@ void buscarlibro(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<" Todos los libros estan prestados\n\n";
+					cout<<" Todos los libros estan prestados\n\n";
 
 					system("pause");
 				}
@@ -270,20 +271,20 @@ void buscarlibro(int a) {
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 
-				std::cout<<"================================================\n";
-				std::cout<<" Mostrando Libros No Disponibles\n";
-				std::cout<<"================================================\n";
+				cout<<"================================================\n";
+				cout<<" Mostrando Libros No Disponibles\n";
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(l[i].prestado=='S') {
-						std::cout<<"Libro ["<<i+1<<"]\n\n";
+						cout<<"Libro ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del Libro:"<<l[i].nombrelibro<<std::endl;
-						std::cout<<" Nombre del Autor:"<<l[i].autor<<std::endl;
-						std::cout<<" ID: "<<l[i].id<<std::endl;
-						std::cout<<" Año de publicacion: "<<l[i].anio<<std::endl;
-						std::cout<<" Prestado?: "<<l[i].prestado;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del Libro:"<<l[i].nombrelibro<<endl;
+						cout<<" Nombre del Autor:"<<l[i].autor<<endl;
+						cout<<" ID: "<<l[i].id<<endl;
+						cout<<" Año de publicacion: "<<l[i].anio<<endl;
+						cout<<" Prestado?: "<<l[i].prestado;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -295,7 +296,7 @@ void buscarlibro(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"Todos los libros estan disponibles\n\n";
+					cout<<"Todos los libros estan disponibles\n\n";
 
 					system("pause");
 				}
@@ -323,30 +324,30 @@ bool registrarpersona(int a) {
 
 	char confirmacion; /*Aqui guardare la confirmacion de la accion de registrar el libro*/
 
-	std::string tempnombre; /*Aqui guardare temporalmente el nombre de la persona*/
-	std::string tempemail; /*Aqui guardare temporalmente el email de la persona*/
-	std::string tempdni; /*Aqui guardare temporalmente el dani*/
-	std::string tempcodigo; /*Aqui guardare temporalmente le codigo de la persona*/
+	string tempnombre; /*Aqui guardare temporalmente el nombre de la persona*/
+	string tempemail; /*Aqui guardare temporalmente el email de la persona*/
+	string tempdni; /*Aqui guardare temporalmente el dani*/
+	string tempcodigo; /*Aqui guardare temporalmente le codigo de la persona*/
 	int temptelefono; /*Aqui guardare temporalmente le numeor de telefono de la poersona*/
 
-	std::cin.ignore();
+	cin.ignore();
 
-	std::cout<<"================================================\n";
-	std::cout<<" Registrando...\n";
-	std::cout<<"================================================\n";
-	std::cout<<" Nombre del usuario: ";
-	std::getline(std::cin, tempnombre);
-	std::cout<<" Correo institucional: ";
-	std::cin>>tempemail;
-	std::cout<<" DNI del usuario: ";
-	std::cin>>tempdni;
-	std::cout<<" Codigo del usuario: ";
-	std::cin>>tempcodigo;
-	std::cout<<" Telefono del usuario: ";
-	std::cin>>temptelefono;
-	std::cout<<"================================================\n";
-	std::cout<<" Confirmar accion [S/N]: ";
-	std::cin>>confirmacion;
+	cout<<"================================================\n";
+	cout<<" Registrando...\n";
+	cout<<"================================================\n";
+	cout<<" Nombre del usuario: ";
+	getline(cin, tempnombre);
+	cout<<" Correo institucional: ";
+	cin>>tempemail;
+	cout<<" DNI del usuario: ";
+	cin>>tempdni;
+	cout<<" Codigo del usuario: ";
+	cin>>tempcodigo;
+	cout<<" Telefono del usuario: ";
+	cin>>temptelefono;
+	cout<<"================================================\n";
+	cout<<" Confirmar accion [S/N]: ";
+	cin>>confirmacion;
 
 	if(confirmacion=='S' || confirmacion=='s') {
 		p[a].nombre = tempnombre;
@@ -362,16 +363,16 @@ bool registrarpersona(int a) {
 
 
 void listapersonas(int a) {
-	std::cout<<"================================================\n";
+	cout<<"================================================\n";
 	for (int i=0; i<a; i++) {
-		std::cout<<" Usuario ["<<i+1<<"]\n\n";
+		cout<<" Usuario ["<<i+1<<"]\n\n";
 
-		std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
-		std::cout<<" Email institucional: "<<p[i].email<<std::endl;
-		std::cout<<" DNI: "<<p[i].dni<<std::endl;
-		std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
-		std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
-		std::cout<<"================================================\n";
+		cout<<" Nombre del usuario: "<<p[i].nombre<<endl;
+		cout<<" Email institucional: "<<p[i].email<<endl;
+		cout<<" DNI: "<<p[i].dni<<endl;
+		cout<<" Codigo universitario: "<<p[i].codigo<<endl;
+		cout<<" Telefono: "<<p[i].telefono<<endl;
+		cout<<"================================================\n";
 	}
 	system("pause");
 }
@@ -384,19 +385,19 @@ void buscarpersona(int a) {
 	do {
 		system("cls");
 
-		std::cout<<"================================================\n";
-		std::cout<<" Buscar usario por...\n";
-		std::cout<<"================================================\n";
-		std::cout<<" 1 - Nombre del usuario\n";
-		std::cout<<" 2 - Email institucional\n";
-		std::cout<<" 3 - DNI\n";
-		std::cout<<" 4 - Codigo universitario\n";
-		std::cout<<" 5 - Telefono\n\n";
+		cout<<"================================================\n";
+		cout<<" Buscar usario por...\n";
+		cout<<"================================================\n";
+		cout<<" 1 - Nombre del usuario\n";
+		cout<<" 2 - Email institucional\n";
+		cout<<" 3 - DNI\n";
+		cout<<" 4 - Codigo universitario\n";
+		cout<<" 5 - Telefono\n\n";
 
-		std::cout<<" 0 - Volver al Menu Principal\n";
-		std::cout<<"================================================\n";
-		std::cout<<" Operacion: ";
-		std::cin>>operacion;
+		cout<<" 0 - Volver al Menu Principal\n";
+		cout<<"================================================\n";
+		cout<<" Operacion: ";
+		cin>>operacion;
 
 		switch(operacion) {
 
@@ -404,25 +405,25 @@ void buscarpersona(int a) {
 				system("cls");
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el usuario*/
-				std::string tempnombre; /*Aqui guardare temporalmente le nombre del usuario*/
-				std::cin.ignore();
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Libro por Nombre del Usuario\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el nombre del Usuario:\n";
-				std::getline(std::cin, tempnombre);
-				std::cout<<"================================================\n";
+				string tempnombre; /*Aqui guardare temporalmente le nombre del usuario*/
+				cin.ignore();
+				cout<<"================================================\n";
+				cout<<" Buscar Libro por Nombre del Usuario\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el nombre del Usuario:\n";
+				getline(cin, tempnombre);
+				cout<<"================================================\n";
 
 				for (int i=0; i<a; i++) {
 					if(p[i].nombre==tempnombre) {
-						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+						cout<<" Usuario ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
-						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
-						std::cout<<" DNI: "<<p[i].dni<<std::endl;
-						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
-						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del usuario: "<<p[i].nombre<<endl;
+						cout<<" Email institucional: "<<p[i].email<<endl;
+						cout<<" DNI: "<<p[i].dni<<endl;
+						cout<<" Codigo universitario: "<<p[i].codigo<<endl;
+						cout<<" Telefono: "<<p[i].telefono<<endl;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -434,7 +435,7 @@ void buscarpersona(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"No se a encontrado el usuario\n\n";
+					cout<<"No se a encontrado el usuario\n\n";
 
 					system("pause");
 				}
@@ -446,25 +447,25 @@ void buscarpersona(int a) {
 				system("cls");
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
-				std::string tempemail; /*Aqui guardare temporalmente el email*/
-				std::cin.ignore();
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Usuario por su Email Institucional...\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el Email:\n";
-				std::cin>>tempemail;
-				std::cout<<"================================================\n";
+				string tempemail; /*Aqui guardare temporalmente el email*/
+				cin.ignore();
+				cout<<"================================================\n";
+				cout<<" Buscar Usuario por su Email Institucional...\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el Email:\n";
+				cin>>tempemail;
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(p[i].email==tempemail) {
-						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+						cout<<" Usuario ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
-						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
-						std::cout<<" DNI: "<<p[i].dni<<std::endl;
-						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
-						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del usuario: "<<p[i].nombre<<endl;
+						cout<<" Email institucional: "<<p[i].email<<endl;
+						cout<<" DNI: "<<p[i].dni<<endl;
+						cout<<" Codigo universitario: "<<p[i].codigo<<endl;
+						cout<<" Telefono: "<<p[i].telefono<<endl;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -476,7 +477,7 @@ void buscarpersona(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"No se a encontrado el usuarioi\n\n";
+					cout<<"No se a encontrado el usuarioi\n\n";
 
 					system("pause");
 				}
@@ -488,25 +489,25 @@ void buscarpersona(int a) {
 				system("cls");
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
-				std::string tempdni; /*Aqui guardare temporalmente el dni del usuario*/
-				std::cin.ignore();
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Libro por DNI...\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el DNI del Usuario:";
-				std::cin>>tempdni;
-				std::cout<<"================================================\n";
+				string tempdni; /*Aqui guardare temporalmente el dni del usuario*/
+				cin.ignore();
+				cout<<"================================================\n";
+				cout<<" Buscar Libro por DNI...\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el DNI del Usuario:";
+				cin>>tempdni;
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(p[i].dni==tempdni) {
-						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+						cout<<" Usuario ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
-						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
-						std::cout<<" DNI: "<<p[i].dni<<std::endl;
-						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
-						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del usuario: "<<p[i].nombre<<endl;
+						cout<<" Email institucional: "<<p[i].email<<endl;
+						cout<<" DNI: "<<p[i].dni<<endl;
+						cout<<" Codigo universitario: "<<p[i].codigo<<endl;
+						cout<<" Telefono: "<<p[i].telefono<<endl;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -518,7 +519,7 @@ void buscarpersona(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"No se a encontrado al Usuario\n\n";
+					cout<<"No se a encontrado al Usuario\n\n";
 
 					system("pause");
 				}
@@ -530,25 +531,25 @@ void buscarpersona(int a) {
 				system("cls");
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
-				std::string tempcodigo; /*Aqui guardare temporalmente el codigo del usuario*/
-				std::cin.ignore();
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Libro por Codigo...\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el Codigo del Usuario:";
-				std::cin>>tempcodigo;
-				std::cout<<"================================================\n";
+				string tempcodigo; /*Aqui guardare temporalmente el codigo del usuario*/
+				cin.ignore();
+				cout<<"================================================\n";
+				cout<<" Buscar Libro por Codigo...\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el Codigo del Usuario:";
+				cin>>tempcodigo;
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(p[i].codigo==tempcodigo) {
-						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+						cout<<" Usuario ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
-						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
-						std::cout<<" DNI: "<<p[i].dni<<std::endl;
-						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
-						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del usuario: "<<p[i].nombre<<endl;
+						cout<<" Email institucional: "<<p[i].email<<endl;
+						cout<<" DNI: "<<p[i].dni<<endl;
+						cout<<" Codigo universitario: "<<p[i].codigo<<endl;
+						cout<<" Telefono: "<<p[i].telefono<<endl;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -560,7 +561,7 @@ void buscarpersona(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"No se a encontrado al usuario\n\n";
+					cout<<"No se a encontrado al usuario\n\n";
 
 					system("pause");
 				}
@@ -573,23 +574,23 @@ void buscarpersona(int a) {
 
 				int confirmacion=0; /*usare esto para confirmar que se ha encontrado el libro*/
 				int temptelefono; /*Aqui guardare temporalmente el telefono del usuario*/
-				std::cout<<"================================================\n";
-				std::cout<<" Buscar Libro por Telefono...\n";
-				std::cout<<"================================================\n";
-				std::cout<<" Por favor ingrese el Telefono del Usuario:";
-				std::cin>>temptelefono;
-				std::cout<<"================================================\n";
+				cout<<"================================================\n";
+				cout<<" Buscar Libro por Telefono...\n";
+				cout<<"================================================\n";
+				cout<<" Por favor ingrese el Telefono del Usuario:";
+				cin>>temptelefono;
+				cout<<"================================================\n";
 
 				for(int i=0; i<a; i++) {
 					if(p[i].telefono==temptelefono) {
-						std::cout<<" Usuario ["<<i+1<<"]\n\n";
+						cout<<" Usuario ["<<i+1<<"]\n\n";
 
-						std::cout<<" Nombre del usuario: "<<p[i].nombre<<std::endl;
-						std::cout<<" Email institucional: "<<p[i].email<<std::endl;
-						std::cout<<" DNI: "<<p[i].dni<<std::endl;
-						std::cout<<" Codigo universitario: "<<p[i].codigo<<std::endl;
-						std::cout<<" Telefono: "<<p[i].telefono<<std::endl;
-						std::cout<<"================================================\n";
+						cout<<" Nombre del usuario: "<<p[i].nombre<<endl;
+						cout<<" Email institucional: "<<p[i].email<<endl;
+						cout<<" DNI: "<<p[i].dni<<endl;
+						cout<<" Codigo universitario: "<<p[i].codigo<<endl;
+						cout<<" Telefono: "<<p[i].telefono<<endl;
+						cout<<"================================================\n";
 
 						confirmacion=confirmacion+1;
 					}
@@ -601,7 +602,7 @@ void buscarpersona(int a) {
 
 				} else if(confirmacion==0) {
 
-					std::cout<<"No se a encontrado al usuario\n\n";
+					cout<<"No se a encontrado al usuario\n\n";
 
 					system("pause");
 				}
@@ -625,12 +626,12 @@ void prestarlibro(int a, int b) {
 	int indicepersona; /*Aqui guardare el indice de la persona*/
 	char operacion;
 
-	std::cout<<"================================================\n";
-	std::cout<<" Prestamo de libros!\n";
-	std::cout<<"================================================\n";
-	std::cout<<" Por favor ingrese el ID del libro a prestar:";
-	std::cin>>tempid;
-	std::cout<<"================================================\n";
+	cout<<"================================================\n";
+	cout<<" Prestamo de libros!\n";
+	cout<<"================================================\n";
+	cout<<" Por favor ingrese el ID del libro a prestar:";
+	cin>>tempid;
+	cout<<"================================================\n";
 
 	for(int i=0; i<a; i++) {
 		if(l[i].id==tempid) {
@@ -641,12 +642,12 @@ void prestarlibro(int a, int b) {
 	}
 	if(existencia==1) {
 
-		std::string tempcodigo;
+		string tempcodigo;
 		int existencia=0;
 
-		std::cout<<" Ingrese le codigo universitario del prestamista: ";
-		std::cin>>tempcodigo;
-		std::cout<<"================================================\n";
+		cout<<" Ingrese le codigo universitario del prestamista: ";
+		cin>>tempcodigo;
+		cout<<"================================================\n";
 
 		for(int j=0; j<b; j++) {
 			if(p[j].codigo==tempcodigo) {
@@ -659,30 +660,30 @@ void prestarlibro(int a, int b) {
 		}
 		if(existencia==1) {
 
-			std::cout<<"Confirmar operacion [S/N]: ";
-			std::cin>>operacion;
+			cout<<"Confirmar operacion [S/N]: ";
+			cin>>operacion;
 
 			if(operacion=='s' || operacion=='S') {
 
 				l[indicelibro].prestado='S';
 
-				std::cout<<" Accion realizada!\n\n";
+				cout<<" Accion realizada!\n\n";
 
 				system("pause");
 
 			} else {
 
-				std::cout<<"Operacion cancelada...";
+				cout<<"Operacion cancelada...";
 				system("pause");
 
 			}
 		} else {
-			std::cout<<"Ingrese un codigo existente...\n\n";
+			cout<<"Ingrese un codigo existente...\n\n";
 
 			system("pause");
 		}
 	} else {
-		std::cout<<"Por favor ingrese una ID valida...\n\n";
+		cout<<"Por favor ingrese una ID valida...\n\n";
 		system("pause");
 	}
 }
